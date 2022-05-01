@@ -1,31 +1,70 @@
 import React from 'react'
-import './App.css'
-import { Link, Route, Routes, useNavigate } from 'react-router-dom'
+import { Box, AppBar, Toolbar, Typography, IconButton } from '@mui/material'
+import WidgetsRoundedIcon from '@mui/icons-material/WidgetsRounded'
+import GitHubIcon from '@mui/icons-material/GitHub'
 import Main from './pages/Main/Main'
-import About from './pages/About/About'
-import MButton from '@mui/material/Button'
+import { useNavigate } from 'react-router-dom'
+import { toURL } from './utils/common'
 
 function App() {
   const nav = useNavigate()
   return (
-    <div className="app">
-      <h1>APP</h1>
-      <div>
-        <MButton
-          variant="contained"
-          onClick={() => {
-            nav('/')
-          }}
-        >
-          To Main
-        </MButton>
-        <Link to="/about">To About</Link>
-      </div>
-      <Routes>
-        <Route index element={<Main />}></Route>
-        <Route path="about" element={<About />}></Route>
-      </Routes>
-    </div>
+    <Box
+      id="app"
+      sx={{
+        height: '100vh',
+        display: 'flex'
+      }}
+    >
+      <AppBar position="fixed">
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            sx={{
+              mr: 2
+            }}
+            onClick={() => {
+              nav('/')
+            }}
+          >
+            <WidgetsRoundedIcon
+              sx={{
+                fontSize: 28
+              }}
+            />
+          </IconButton>
+          <Typography variant="h5" component="div">
+            Dashboard
+          </Typography>
+
+          <IconButton
+            color="inherit"
+            sx={{
+              ml: 'auto'
+            }}
+            onClick={() => {
+              toURL('https://github.com/GStarP/gstarp-dashboard')
+            }}
+          >
+            <GitHubIcon
+              sx={{
+                fontSize: 28
+              }}
+            />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+      <Box
+        sx={{
+          display: 'flex',
+          flex: 1,
+          // 1 => 8px
+          pt: 8
+        }}
+      >
+        <Main />
+      </Box>
+    </Box>
   )
 }
 
