@@ -7,11 +7,13 @@ function Main() {
   return (
     <Box
       sx={{
-        flex: 1
+        flex: 1,
+        pt: 4,
+        bgcolor: '#F9FAFD'
       }}
     >
       <Routes>
-        <Route index element={Dashboard()} />
+        <Route index element={<Dashboard />} />
       </Routes>
     </Box>
   )

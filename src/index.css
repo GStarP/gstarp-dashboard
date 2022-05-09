@@ -1,3 +1,18 @@
 body {
   margin: 0;
 }
+
+.background {
+  background-color: '#F9FAFD';
+}
+
+/* width variant, height equal to width*/
+/* child should be: position=relative, height=100%, width=100%, box-sizing: border-box*/
+.square {
+  position: relative;
+}
+.square::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}

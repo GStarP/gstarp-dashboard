@@ -16,7 +16,15 @@ function App() {
         display: 'flex'
       }}
     >
-      <AppBar position="fixed">
+      <AppBar
+        position="fixed"
+        color="transparent"
+        sx={{
+          boxShadow: 0,
+          borderBottom: 1,
+          borderColor: 'grey.300'
+        }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -27,13 +35,9 @@ function App() {
               nav('/')
             }}
           >
-            <WidgetsRoundedIcon
-              sx={{
-                fontSize: 28
-              }}
-            />
+            <WidgetsRoundedIcon />
           </IconButton>
-          <Typography variant="h5" component="div">
+          <Typography variant="h6" component="div">
             Dashboard
           </Typography>
 
@@ -46,11 +50,7 @@ function App() {
               toURL('https://github.com/GStarP/gstarp-dashboard')
             }}
           >
-            <GitHubIcon
-              sx={{
-                fontSize: 28
-              }}
-            />
+            <GitHubIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
