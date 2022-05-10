@@ -2,6 +2,7 @@ import React from 'react'
 import { Grid, Paper, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import TableViewOutlinedIcon from '@mui/icons-material/TableViewOutlined'
+import MouseOutlinedIcon from '@mui/icons-material/MouseOutlined'
 // Icon Type Support
 import { OverridableComponent } from '@mui/material/OverridableComponent'
 import { SvgIconTypeMap } from '@mui/material/SvgIcon'
@@ -42,7 +43,7 @@ function DashboardItem(props: DashBoardItemProps) {
         onClick={() => nav(props.path)}
       >
         {<props.icon sx={{ fontSize: DASHBOARD_ITEM_ICON_SIZE }} />}
-        <Typography variant="body2" sx={{ mt: 1, userSelect: 'none' }}>
+        <Typography variant="body2" sx={{ mt: 2, userSelect: 'none' }}>
           {props.title}
         </Typography>
       </Paper>
@@ -53,9 +54,14 @@ function DashboardItem(props: DashBoardItemProps) {
 function Dashboard() {
   const dashBoardItems: DashBoardItemProps[] = [
     {
-      title: 'RightClickMenu',
+      title: 'Right Click Menu',
       icon: TableViewOutlinedIcon,
       path: 'right-click-menu'
+    },
+    {
+      title: 'TripleClick Event',
+      icon: MouseOutlinedIcon,
+      path: 'triple-click-event'
     }
   ]
   return (
@@ -63,7 +69,7 @@ function Dashboard() {
       sx={{
         display: 'flex',
         justifyContent: 'center',
-        mx: 4
+        px: 4
       }}
     >
       <Box sx={{ flex: 1, maxWidth: '1024px' }}>
@@ -76,7 +82,9 @@ function Dashboard() {
             mt: 2
           }}
         >
-          {dashBoardItems.map((props) => DashboardItem(props))}
+          {dashBoardItems.map((props, index) => (
+            <DashboardItem {...props} key={`dashboard-item-${index}`} />
+          ))}
         </Grid>
       </Box>
     </Box>
