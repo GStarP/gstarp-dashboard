@@ -3,6 +3,10 @@ function useMultipleClick(
   clickTime: number,
   callback: (e: number) => void
 ) {
+  // https://zh-hans.reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects
+  // in <StrictMode> & dev env, useMemo will be called one more time
+  // then developer may discover side effects caused by their poor logic
+  console.log(1)
   let clicks: number[] = []
   const clickHandler = () => {
     // add precise time of current click event
@@ -22,9 +26,7 @@ function useMultipleClick(
       }
     }
   }
-  return {
-    clickHandler
-  }
+  return clickHandler
 }
 
 export { useMultipleClick }

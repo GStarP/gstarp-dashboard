@@ -24,7 +24,7 @@ function TripleClickEvent() {
     () =>
       useMultipleClick(ctnTime, clickTime, (time: number) => {
         setText(`${clickTime} clicks in ${time | 0} ms`)
-      }).clickHandler,
+      }),
     [ctnTime, clickTime]
   )
 
