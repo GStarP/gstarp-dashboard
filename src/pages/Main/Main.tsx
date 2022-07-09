@@ -8,11 +8,7 @@ import RightClickMenu from './RightClickMenu/RightClickMenu'
 function Main() {
   return (
     <Box
-      sx={{
-        flex: 1,
-        pt: 4,
-        bgcolor: '#F9FAFD'
-      }}
+      className="bg flex-1 pt-4"
     >
       <Routes>
         <Route index element={<Dashboard />} />

@@ -22,23 +22,14 @@ function DashboardItem(props: DashBoardItemProps) {
     <Grid item xs={2} className="square">
       <Paper
         variant="outlined"
+        className="absolute flex flex-col items-center justify-center hover:cursor-pointer box-border"
         sx={{
           position: 'absolute',
           // Grid Item has padding=16px
           top: '16px',
           left: '16px',
           width: 'calc(100% - 16px)',
-          height: 'calc(100% - 16px)',
-          boxSizing: 'border-box',
-
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-
-          ':hover': {
-            cursor: 'pointer'
-          }
+          height: 'calc(100% - 16px)'
         }}
         onClick={() => nav(props.path)}
       >
@@ -66,13 +57,9 @@ function Dashboard() {
   ]
   return (
     <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        px: 4
-      }}
+      className="flex justify-center px-8"
     >
-      <Box sx={{ flex: 1, maxWidth: '1024px' }}>
+      <Box className="flex-1 max-w-screen-lg">
         <Typography variant="h4">Dashboard</Typography>
         <Typography color="text.secondary">Try Tricky Functions</Typography>
         <Grid

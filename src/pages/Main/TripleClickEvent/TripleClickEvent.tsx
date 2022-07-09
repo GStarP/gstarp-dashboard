@@ -30,22 +30,10 @@ function TripleClickEvent() {
 
   return (
     <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        px: 4,
-        pb: 6,
-        boxSizing: 'border-box',
-        height: '100%'
-      }}
+      className="flex justify-center px-8 pb-12 box-border h-full"
     >
       <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          flex: 1,
-          maxWidth: '1024px'
-        }}
+       className="flex flex-col flex-1 max-w-screen-lg"
       >
         <Typography variant="h4">TripleClick Event</Typography>
         <Typography color="text.secondary">Listen Continuous Click</Typography>
@@ -69,22 +57,13 @@ function TripleClickEvent() {
         </Box>
         <Paper
           variant="outlined"
-          sx={{
-            display: 'flex',
-            flex: 1,
-            mt: 4,
-            justifyContent: 'center',
-            alignItems: 'center',
-            ':hover': {
-              cursor: 'pointer'
-            }
-          }}
+          className="flex flex-1 mt-8 justify-center items-center hover:cursor-pointer"
           onClick={multipleClickHandler}
         >
           <Typography
             variant="h3"
             color="text.disabled"
-            sx={{ userSelect: 'none' }}
+            className="select-none"
           >
             {text}
           </Typography>

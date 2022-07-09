@@ -2,8 +2,8 @@ body {
   margin: 0;
 }
 
-.background {
-  background-color: '#F9FAFD';
+.bg {
+  background-color: #F9FAFD;
 }
 
 /* width variant, height equal to width*/

@@ -1,7 +1,10 @@
-# react-mui-template
+# GStarP Dashboard
 
-- React
-- React Router
-- TS
-- Material UI
-- ESLint + Prettier
+Find interesting function here.
+
+## Quick Start
+
+```bash
+npm i
+npm run start
+```

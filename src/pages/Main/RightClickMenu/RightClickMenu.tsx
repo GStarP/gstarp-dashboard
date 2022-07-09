@@ -10,10 +10,8 @@ function AnimationMenu(hide: () => void) {
   const menuItem = [Check, Close, Cached]
   return (
     <Box
+      className="relative -top-6 left-2"
       sx={{
-        position: 'relative',
-        top: -24,
-        left: 8,
         '>button:not(:last-child)': {
           mr: 1
         }
@@ -50,40 +48,22 @@ function RightClickMenu() {
 
   return (
     <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        px: 4,
-        pb: 6,
-        boxSizing: 'border-box',
-        height: '100%'
-      }}
+      className="flex justify-center px-8 pb-12 box-border h-full"
     >
       <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          flex: 1,
-          maxWidth: '1024px'
-        }}
+        className="flex flex-col flex-1 max-w-screen-lg"
       >
         <Typography variant="h4">Right Click Menu</Typography>
         <Typography color="text.secondary">DIY Right Click Response</Typography>
         <Paper
+          className="flex flex-1 justify-center items-center mt-8"
           variant="outlined"
-          sx={{
-            display: 'flex',
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            mt: 4
-          }}
           ref={el}
         >
           <Typography
             variant="h3"
             color="text.disabled"
-            sx={{ userSelect: 'none' }}
+            className="select-none"
           >
             Right Click Blank Area
           </Typography>
